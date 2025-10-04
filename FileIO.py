@@ -117,12 +117,21 @@ class ExtensionsExtractions(JSONSetup, DependencyChecker):
     
     def JSON_based_files_extraction(self, filename: str, extension: str) -> dict:
         data = self.read_JSON(filename=filename)
-        files = {}
+        projects = {}
         print(data)
         for path_to_folder in data[FOLDERS_DICTIONARY_STRING]:
             print("\n\nJSON_based_imports_extraction SAYS: ", path_to_folder)
-            files[path_to_folder] = self.direct_file_path_extraction(path=path_to_folder, extension=extension)
-        return files
+            files_list = self.direct_file_path_extraction(path=path_to_folder, extension=extension)
+            try:
+                venv_path = self.find_venv(project_root=path_to_folder)
+            except ValueError:
+                venv_path = None
+
+            projects[path_to_folder] = {
+                "files": files_list,
+                "venv": venv_path
+            }
+        return projects
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
