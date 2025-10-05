@@ -13,7 +13,7 @@ class CLI_Menu:
     Each class handles a list of functions, so for multiple mini-screens (if you want that) you need
     to make that many instances of this very class.
     """
-    def __init__(self, opts_lists: dict[str: object], title: str, sub_title: str|None):
+    def __init__(self, opts_lists: dict[str, object], title: str, sub_title: str|None):
         """Will initiate the presentation of the CLI menu."""
         self.opts = opts_lists
         self.title = title
@@ -21,7 +21,7 @@ class CLI_Menu:
         self.calculate_lenght_title = len(title)
         self.option_maker(self.opts)
     
-    def option_maker(self, opts_lists: dict[str: object]):
+    def option_maker(self, opts_lists: dict[str, object]):
         """
         Responsible to set up the running menu with the operations.
         It will only take non-lambda based values! for it is a singleton connection maker.

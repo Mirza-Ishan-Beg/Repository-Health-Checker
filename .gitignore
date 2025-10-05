@@ -5,4 +5,6 @@ __pycache__/
 # Virtual environment
 .venv/
 venv/
-credentials.json 
+credentials.json
+cli_automation.log
+token.json

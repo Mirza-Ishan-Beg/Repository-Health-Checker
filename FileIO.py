@@ -137,13 +137,6 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
 
     EE_obj = ExtensionsExtractions()
-    # path_to_folder = EE_obj.folder_dialog_opener()
-    # print(path_to_folder)
-    # py_files = EE_obj.direct_file_path_extraction(path=path_to_folder, extension="py")
-    # print('python files:')    
-
-    # for i in py_files:
-    #     print(i)
     for i in range(3):
         EE_obj.save_folder_extension_to_json("value.json")
 
