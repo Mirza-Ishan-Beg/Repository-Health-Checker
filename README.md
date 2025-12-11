@@ -4,7 +4,7 @@ An automation program that runs with the help of task scheduler to allow checkin
 
 ---
 
-![[Instruction-to-install.png]]
+![Instruction-to-install.png](Instruction-to-install.png)
 
 ---
 # Libraries used underneath
